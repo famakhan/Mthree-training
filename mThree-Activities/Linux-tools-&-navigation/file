@@ -1,0 +1,84 @@
+# Acitivity 1 - Linux Navigation Activity
+In this activity, you'll practice using basic navigation commands in a Linux system. Follow these instructions to complete the activity.
+
+### Navigate Using Basic Commands:
+
+- Check Linux Version:
+  
+      uname -a
+      Linux ubuntu 5.15.0-87-generic #97-Ubuntu SMP Tue Oct 3 09:52:42 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
+
+- Check Current Location:
+
+      pwd
+      /home/ubuntu/Mthree-training/mThree-Activities/Linux-tools-&-navigation
+
+- Move Up One Directory:
+
+      cd ..
+
+- Check Location Again:
+
+       pwd
+       /home/ubuntu/Mthree-training/mThree-Activities
+
+- List Files with Details:
+
+      ls -l
+  
+      total 24
+      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
+      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
+
+  
+- List Files Sorted by Modification Time (Oldest First):
+
+      ls -ltr
+      total 24
+      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
+      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
+
+- Change to Root Directory:
+
+      cd /
+
+- Check Location in Root Directory:
+
+      pwd
+
+- List Files in Root Directory Sorted by Modification Time:
+
+      ls -ltr
+
+- Change Back to Home Directory:
+
+      cd ~
+
+- List All Files, Including Hidden Files:
+
+      ls -ltra
+
+- View Command History:
+
+      history
+      total 24
+      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
+      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
+      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
+      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
+
+
+#### Tips
+- Using ls -l provides detailed information about files and directories.
+- ls -ltr sorts files by modification time, with the oldest files listed first.
+- ls -ltra shows all files, including hidden ones, and sorts by modification time.
