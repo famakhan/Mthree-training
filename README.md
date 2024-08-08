@@ -108,12 +108,10 @@ In this activity, you'll practice using basic navigation commands in a Linux sys
 - Check Linux Version:
   
       uname -a
-      Linux ubuntu 5.15.0-87-generic #97-Ubuntu SMP Tue Oct 3 09:52:42 UTC 2023 aarch64 aarch64 aarch64 GNU/Linux
 
 - Check Current Location:
 
       pwd
-      /home/ubuntu/Mthree-training/mThree-Activities/Linux-tools-&-navigation
 
 - Move Up One Directory:
 
@@ -122,31 +120,16 @@ In this activity, you'll practice using basic navigation commands in a Linux sys
 - Check Location Again:
 
        pwd
-       /home/ubuntu/Mthree-training/mThree-Activities
+
 
 - List Files with Details:
 
       ls -l
-  
-      total 24
-      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
-      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
 
   
 - List Files Sorted by Modification Time (Oldest First):
 
       ls -ltr
-      total 24
-      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
-      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
 
 - Change to Root Directory:
 
@@ -171,16 +154,115 @@ In this activity, you'll practice using basic navigation commands in a Linux sys
 - View Command History:
 
       history
-      total 24
-      drwxrwxr-x 3 ubuntu ubuntu 4096 Aug  8 12:55  Edit-files-main
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 12:55 'Using VI'
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 12:55  Scheduling-and-Automation-main
-      drwxrwxr-x 7 ubuntu ubuntu 4096 Aug  8 12:55  linux_activities
-      drwxrwxr-x 2 ubuntu ubuntu 4096 Aug  8 13:52 'Linux-tools-&-navigation'
-      drwxrwxr-x 4 ubuntu ubuntu 4096 Aug  8 13:52  File-managment
+
 
 
 #### Tips
 - Using ls -l provides detailed information about files and directories.
 - ls -ltr sorts files by modification time, with the oldest files listed first.
 - ls -ltra shows all files, including hidden ones, and sorts by modification time.
+
+
+# Activity 2 - File Management and Git Operations
+## Part A: Managing Files and Folders
+In this part of the activity, you'll practice creating, moving, and managing files and folders on a remote Linux system.
+
+### Steps
+- Create a Folder with Your Name:
+
+      mkdir <yourname>
+
+- Move into the New Folder:
+
+      cd <yourname>
+
+- Create an Empty File:
+
+      touch file
+
+- Create a New Folder Called myfolder:
+
+      mkdir myfolder
+
+- Move the File to myfolder:
+
+      mv file myfolder
+
+- Create a Backup of the File:
+
+      cp -p myfolder/file file.bkp
+
+- Remove the myfolder Directory:
+
+      rm -rf myfolder
+
+- Return to Your Home Directory:
+
+      cd ~
+
+## Part B: Working with Git
+In this part, you'll clone a Git repository and perform various file operations.
+
+### Steps
+- Clone the Repository:
+
+      git clone https://github.com/The-Software-Guild/pss-orderbook-deploy/
+
+- Navigate to the Cloned Repository Directory:
+
+      cd pss-orderbook-deploy
+- Navigate to the src/linux_activities/Activity2 Directory:
+
+      cd src/linux_activities/Activity2
+- Searching and Managing Files
+Display the Contents of stock_investments.txt:
+
+      cat stock_investments.txt
+
+Display the First Five Lines of the File:
+
+      head -5 stock_investments.txt
+
+Display the Last Five Lines of the File:
+
+     tail -5 stock_investments.txt
+
+Count Lines Containing the Word GOOG:
+
+     grep GOOG stock_investments.txt | wc -l
+
+Count Lines Containing the Word T:
+
+     grep -wc T stock_investments.txt
+
+List Files Containing the Word SPY:
+
+     grep -lir spy .
+
+List Files Not Containing the Word spy:
+
+     grep -lvri spy .
+
+Find Files Containing data in Their Name:
+
+    find . -type f -name "*data*"
+
+Find Folders Named error:
+ 
+     find . -type d -name error
+
+Change Permissions on Files Containing data to Read-Only for Group and Others:
+
+     sudo find . -type f -name "*data*" -exec chmod 744 {} \;
+
+Remove Write Permission from the File WFC/data.txt:
+
+     chmod -w WFC/data.txt
+
+#### Tips
+- Use ls -l to get detailed information about files and directories.
+- Use grep for searching text within files and use flags to refine your search.
+- Use find to locate files and directories based on various criteria.
+
+
+
